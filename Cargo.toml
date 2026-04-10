@@ -1,0 +1,8 @@
+[package]
+name = "cuda-emotion"
+version = "0.1.0"
+edition = "2021"
+description = "Emotional state engine — maps neurotransmitter levels and experiences to behavioral emotions that modulate decisions"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
