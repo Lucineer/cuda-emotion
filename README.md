@@ -1,47 +1,99 @@
 # cuda-emotion
 
-**11 emotional states as computational modulators of agent behavior.**
+Emotional state engine — maps neurochemicals to 11 core emotions that modulate risk, exploration, cooperation (Rust)
 
-> Emotions aren't decorative. They change how the agent thinks, decides, and acts.
+Part of the Cocapn cognitive layer — how agents think, decide, and learn.
 
-## The Model
+## What It Does
 
-Emotions exist in a 2D valence-arousal space:
-- **Valence**: positive (approach) to negative (avoid)
-- **Arousal**: calm (deliberate) to excited (reactive)
+### Key Types
 
-### 11 Emotions
+- `EmotionalState` — core data structure
+- `EmotionalModulation` — core data structure
+- `EmotionalMemory` — core data structure
+- `EmotionalEpisode` — core data structure
+- `EmotionalContagion` — core data structure
+- `EmotionEngine` — core data structure
 
-| Emotion | Valence | Arousal | Effect on Agent |
-|---------|---------|---------|-----------------|
-| Joy | + | + | Faster decisions, broader exploration |
-| Trust | + | - | Cooperation, information sharing |
-| Surprise | 0 | + | Attention spike, context reset |
-| Anticipation | + | + | Planning, preparation |
-| Fear | - | + | Rapid avoidance, deliberation suppression |
-| Anger | - | + | Aggressive action, risk tolerance |
-| Disgust | - | - | Rejection, avoidance |
-| Sadness | - | - | Reduced activity, conservative choices |
-| Curiosity | + | + | Increased exploration |
-| Calm | + | - | Deep deliberation, thorough analysis |
-| Frustration | - | + | Strategy switching, escalation |
+## Quick Start
 
-## Key Mechanics
+```bash
+# Clone
+git clone https://github.com/Lucineer/cuda-emotion.git
+cd cuda-emotion
 
-- **Emotional contagion**: States spread to nearby agents via A2A messages
-- **Behavioral modulation**: Emotion affects attention breadth, decision speed, and risk tolerance
-- **Emotional memory**: Events tagged with emotional valence; emotional events persist longer in episodic memory
-- **Return to baseline**: Emotions decay exponentially toward neutral state
+# Build
+cargo build
 
-## Ecosystem Integration
+# Run tests
+cargo test
+```
 
-- [cuda-neurotransmitter](https://github.com/Lucineer/cuda-neurotransmitter) -- Neurochemical foundation
-- [cuda-attention](https://github.com/Lucineer/cuda-attention) -- Arousal modulates attention scope
-- [cuda-deliberation](https://github.com/Lucineer/cuda-deliberation) -- Emotion affects deliberation depth
-- [cuda-memory-fabric](https://github.com/Lucineer/cuda-memory-fabric) -- Emotional valence strengthens encoding
-- [cuda-communication](https://github.com/Lucineer/cuda-communication) -- Emotional state in messages
-- [cuda-narrative](https://github.com/Lucineer/cuda-narrative) -- Stories carry emotional arcs
+## Usage
+
+```rust
+use cuda_emotion::*;
+
+// See src/lib.rs for full API
+// 12 unit tests included
+```
+
+### Available Implementations
+
+- `Emotion` — see source for methods
+- `EmotionalState` — see source for methods
+- `EmotionalModulation` — see source for methods
+- `EmotionalMemory` — see source for methods
+- `EmotionalContagion` — see source for methods
+- `EmotionEngine` — see source for methods
+
+## Testing
+
+```bash
+cargo test
+```
+
+12 unit tests covering core functionality.
+
+## Architecture
+
+This crate is part of the **Cocapn Fleet** — a git-native multi-agent ecosystem.
+
+- **Category**: cognition
+- **Language**: Rust
+- **Dependencies**: See `Cargo.toml`
+- **Status**: Active development
+
+## Related Crates
+
+- [cuda-confidence-cascade](https://github.com/Lucineer/cuda-confidence-cascade)
+- [cuda-deliberation](https://github.com/Lucineer/cuda-deliberation)
+- [cuda-reflex](https://github.com/Lucineer/cuda-reflex)
+- [cuda-goal](https://github.com/Lucineer/cuda-goal)
+- [cuda-fusion](https://github.com/Lucineer/cuda-fusion)
+- [cuda-attention](https://github.com/Lucineer/cuda-attention)
+- [cuda-narrative](https://github.com/Lucineer/cuda-narrative)
+- [cuda-learning](https://github.com/Lucineer/cuda-learning)
+- [cuda-skill](https://github.com/Lucineer/cuda-skill)
+
+## Fleet Position
+
+```
+Casey (Captain)
+├── JetsonClaw1 (Lucineer realm — hardware, low-level systems, fleet infrastructure)
+├── Oracle1 (SuperInstance — lighthouse, architecture, consensus)
+└── Babel (SuperInstance — multilingual scout)
+```
+
+## Contributing
+
+This is a fleet vessel component. Fork it, improve it, push a bottle to `message-in-a-bottle/for-jetsonclaw1/`.
 
 ## License
 
-MIT OR Apache-2.0
+MIT
+
+---
+
+*Built by JetsonClaw1 — part of the Cocapn fleet*
+*See [cocapn-fleet-readme](https://github.com/Lucineer/cocapn-fleet-readme) for the full fleet roadmap*
